@@ -1,8 +1,0 @@
-<?php $flash_messages = lmbToolkit :: instance()->getFlashBox()->getUnifiedList(); ?>
-
-<list:list from='$flash_messages'>
-<list:ITEM>
-<core:OPTIONAL for='is_error'><div class="error_border"><b>{$message}</b></div></core:OPTIONAL>
-<core:OPTIONAL for='is_message'><div class="border"><b>{$message}</b></div></core:OPTIONAL>
-</list:ITEM>
-</list:list>

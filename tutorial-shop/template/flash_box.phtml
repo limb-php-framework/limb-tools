@@ -1,8 +1,0 @@
-<? $flash_messages = $this->toolkit->getFlashBox()->getUnifiedList(); ?>
-
-{{list using='$flash_messages'}}
-{{list:item}}
-<? if($item['is_error']){ ?><div class="error_border"><b>{$item.message}</b></div><? } ?>
-<? if($item['is_message']){ ?><div class="border"><b>{$item.message}</b></div><? } ?>
-{{/list:item}}
-{{/list}}

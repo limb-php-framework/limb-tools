@@ -1,3 +1,0 @@
-<?php
-  @define('LIMB_HTTP_BASE_PATH', 'http://examples.limb-project.com/shop/');
-?>

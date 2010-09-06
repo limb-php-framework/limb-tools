@@ -1,4 +1,0 @@
-Allow from all
-
-RewriteEngine On
-RewriteRule ^(.*)$ www [L]
