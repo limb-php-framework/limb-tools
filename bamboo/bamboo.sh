@@ -28,7 +28,7 @@ fi
 rm -rf $PROJECT_PATH/limb/bamboo
 
 mkdir -p $PROJECT_PATH/limb/bamboo
-cp -r $CUR_DIR/../bamboo_runner/* $PROJECT_PATH/limb/bamboo
+cp -r $CUR_DIR/* $PROJECT_PATH/limb/bamboo
 
 php $PROJECT_PATH/limb/bamboo/runner.php
 
