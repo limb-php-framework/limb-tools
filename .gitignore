@@ -1,0 +1,7 @@
+.idea
+*override.php
+*~*
+*conflicted*
+.buildpath
+.project
+.settings
