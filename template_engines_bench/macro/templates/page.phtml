@@ -1,0 +1,75 @@
+<table width=800>
+<tr><td width=200>
+
+<table bgcolor=#000000 cellspacing=2 cellpadding=4 border=0 width=100%>
+<tr><td bgcolor=#ffffff><h1>MacroExample</h1></td></tr>
+</table>
+</td>
+{{list using='{$#adverts}'}}
+  {{list:item}}
+    {{include file='adverts_item.phtml' item="$item" /}}
+  {{/list:item}}
+{{/list}}
+</td>
+</tr>
+
+<tr valign=top>
+<td width=200>
+<table width=100% cellpadding=3>  
+{{list using='{$#sections}' parity="{$parity}"}}
+  {{list:item}}
+    <tr>
+    <td bgcolor=#<? echo ($parity == 'even') ? 'eeeeee' : 'dddddd'; ?>>
+    <font color=#ffffff><b>
+    <a href="/section.phtml?id=<?=$item['id']?>"><?=$item['name']?></a>
+    <? if($item['rip']) { ?><font color=#999999>R.I.P.</font><? } ?></font>
+    </td>
+    </tr>
+  {{/list:item}}
+{{/list}}
+</table>
+
+<p><b>Users</b>: {$#users['TOTAL']} <br>
+<b>Online</b>: <?=count($this->users['ONLINE'])?><br>
+<small>
+<i>
+{{list using="{$#users['ONLINE']}" as="$user"}}
+  {{list:item}}
+    <a href="/user.phtml?id=<?=$user['id'];?>"><?=$user['name'];?></a>
+  {{/list:item}}
+{{/list}}
+</i>
+</small>
+
+</small>
+<p><b>{$#poll['TITLE']}</b><br>
+<small>
+{$#poll['QUESTION']}
+<small><br>
+<form method=post>
+<table>
+{{list using='{$#poll["ANSWERS"]}' as="$answer" counter="$cnt"}}
+  {{list:item}}
+    <tr valign=center><td><small><input type=radio name=a value=<?=$cnt;?>><?=$answer;?><br></td></tr>
+  {{/list:item}}
+{{/list}}
+<tr><td align=center><input type=submit name="OK" value="{$#poll['BUTTON']}"></td></tr>
+</table>
+</form>
+</td>
+
+<td width=400 colspan=3>
+{{slot id='content'/}}
+</td>
+</tr>
+<tr>
+<td colspan=4 align=center>
+<hr>
+<small>
+<i>Lebowski test (Copyleft) korchasa<br>
+based on BlitzTest (Alexey A. Rybak).<br>
+Texts are taken from IMDB.com, Memorable Quotes from "The Big Lebowski" (Ethan & Joel Coen, 1998). <br>
+</i>
+</td>
+</tr>
+</table>
